@@ -99,9 +99,18 @@ double distance(const Point& A, const Point& B)
 	return distance;
 }
 
+Point operator+(const Point& left, const Point& right)
+{
+	Point result;
+	result.set_x(left.get_x() + right.get_x());
+	result.set_y(left.get_y() + right.get_y());
+	return result;
+}
+
 //#define STRUCT_POINT
 //#define DISTANCE_CHECK
 //#define CONSTRUCTORS_CHECK
+//#define ASSIGNMENT_CHECK
 
 void main()
 {
@@ -176,10 +185,9 @@ void main()
 
 #endif // CONSTRUCTORS_CHECK
 
+#ifdef ASSIGNMENT_CHECK
 	int a, b, c;
-
 	a = b = c = 0;
-	
 	cout << a << "\t" << b << "\t" << c << endl;
 
 	Point A, B, C;
@@ -189,6 +197,12 @@ void main()
 	cout << delimiter << endl;
 	A.print();
 	B.print();
+	C.print();
+#endif // ASSIGNMENT_CHECK
+
+	Point A(2, 3);
+	Point B(7, 8);
+	Point C = A + B;
 	C.print();
 }
 
@@ -239,4 +253,27 @@ this - это указатель на объект, для которого вы
 2. ~Destructor - это метод, который уничтожает объект по истечении его времени жизни;
 3. Assignment operator;
 -----------------------------------------------------------
+*/
+
+/*
+---------------------------------------
+				Overloading rules:
+1. Перегрузить можно только существующие операторы:
+	+	перегружается;
+	++	перегружается;
+	%	перегружается;
+	%%	НЕ перегружается;
+2. НЕ все существующие операторы можно перегрузить.
+   НЕ перегружается:
+	?:	Conditional Ternary Operator;
+	::	Оператор разрешения видимости (Scope operator);
+	.	Оператор прямого доступа (Point operator);
+	.*	Pointer to member selection;
+	#	Preprocessor convert to string;
+	##	Preprocessor concatenate;
+3. Перегруженные операторы сохраняют приоритет;
+4. Переопределить поведение операторов над встроенными типами невозможно;
+---------------------------------------
+	operator@
+---------------------------------------
 */
