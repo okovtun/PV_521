@@ -3,8 +3,10 @@ https://www.youtube.com/playlist?list=PLeqyOOqxeiINwoETYVNufASRa3i53K2Gb
 
 TODO:
 0. !!!!!!! Выучить теорию !!!!!!!
-1. Проверочный код в секции STREAMS_CHECK должен заработать:
-	
+1. Проверочный код в секции 'STREAMS_CHECK' должен заработать:
+	https://github.com/okovtun/PV_521/blob/35173b38f18dedc52c6e5b449c55a1dddc84c68e/IntroductionToOOP/Fraction/main.cpp#L345C1-L350C24
+2. Проверочный код в секции 'CONVERSIONS_FROM_CLASS_TO_OTHER' должен заработать:
+3. Проверочный код в секции 'HAVE_A_NICE_DAY' должен заработать:
 
 DONE:
 0. !!!!!!! Выучить теорию !!!!!!!
