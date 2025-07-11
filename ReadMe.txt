@@ -2,6 +2,14 @@
 https://www.youtube.com/playlist?list=PLeqyOOqxeiINwoETYVNufASRa3i53K2Gb
 
 TODO:
+В Solution 'IntroductionToOOP' добавить проект 'String' и в этом проекте реализовать 
+класс 'String', который способен выполнять следующие операции:
+	String str1 = "Hello";
+	String str2 = "World";
+	String str3 = str1 + str2;
+	cout << str3 << endl;
+
+DONE:
 0. !!!!!!! Выучить теорию !!!!!!!
 1. Проверочный код в секции 'STREAMS_CHECK' должен заработать:
 	https://github.com/okovtun/PV_521/blob/35173b38f18dedc52c6e5b449c55a1dddc84c68e/IntroductionToOOP/Fraction/main.cpp#L345C1-L350C24
