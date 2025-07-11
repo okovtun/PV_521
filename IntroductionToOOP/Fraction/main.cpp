@@ -278,6 +278,7 @@ bool operator<=(const Fraction& left, const Fraction& right)
 
 std::ostream& operator<<(std::ostream& os, const Fraction& obj)
 {
+	//Stream extraction operator
 	if (obj.get_integer())os << obj.get_integer();
 	if (obj.get_numerator())
 	{
@@ -288,15 +289,51 @@ std::ostream& operator<<(std::ostream& os, const Fraction& obj)
 	else if (obj.get_integer() == 0)os << 0;
 	return os;
 }
+std::istream& operator>>(std::istream& is, Fraction& obj)
+{
+	/*
+	-----------------------
+	5;
+	1/2;
+	2(3/4);
+	2 3/4;
+	2,3/4;
+	-----------------------
+	*/
+	const int SIZE = 256;	//размер буфера ввода.
+	char buffer[SIZE] = {};	//буфер ввода.
+	//is >> buffer;
+	is.getline(buffer, SIZE);
+	const char delimiters[] = "(/, )";
+	int n = 0;	//количество введенных чисел
+	int numbers[3] = {};	//числа, введенные с клавиатуры
+	//https://legacy.cplusplus.com/reference/cstring/strtok/
+	for (
+		char* pch = strtok(buffer, delimiters);
+		pch && n < 3;
+		pch = strtok(NULL, delimiters)
+		)
+		numbers[n++] = atoi(pch);	//atoi() - ASCII-string to Integer
+	//https://legacy.cplusplus.com/reference/cstdlib/atoi/
+	//for (int i = 0; i < n; i++)cout << numbers[i] << "\t"; cout << endl;
+	switch (n)
+	{
+	case 0: obj = Fraction(); break;
+	case 1: obj = Fraction(numbers[0]); break;
+	case 2: obj = Fraction(numbers[0], numbers[1]); break;
+	case 3: obj = Fraction(numbers[0], numbers[1], numbers[2]); break;
+	}
+	return is;
+}
 
 //#define CONSTRUCTORS_CHECK
 //#define ARITHMETICAL_OPERATORS_CHECK
 //#define INCREMENTO_DECREMENTO_CHECK
 //#define COMPARISON_OPERATORS
-//#define STREAMS_CHECK
+#define STREAMS_CHECK
 //#define TYPE_CONVERSIONS_BASICS
 //#define CONVERSIONS_FROM_OTHER_TO_CLASS
-#define CONVERSIONS_FROM_CLASS_TO_OTHER
+//#define CONVERSIONS_FROM_CLASS_TO_OTHER
 //#define HAVE_A_NICE_DAY
 
 void main()
