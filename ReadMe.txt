@@ -2,6 +2,13 @@
 https://www.youtube.com/playlist?list=PLeqyOOqxeiINwoETYVNufASRa3i53K2Gb
 
 TODO:
+1. Выучить теорию;
+2. Написать CopyAssignment;
+3. В Solution 'IntroductionToOOP' добавить проект Matrix, и в нем реализовать класс Matrix,
+   описывающий Матрицу.
+   В классе должны быть все необходимые методы и операции (+, -, *, /);
+
+DONE:
 В Solution 'IntroductionToOOP' добавить проект 'String' и в этом проекте реализовать 
 класс 'String', который способен выполнять следующие операции:
 	String str1 = "Hello";
