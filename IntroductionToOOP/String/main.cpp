@@ -40,6 +40,7 @@ public:
 		cout << "Constructor:\t\t" << this << endl;
 	}
 	//CopyConstructor,CopyAssignment DeepCopy
+	//CopyMethods, CopySemantic
 	//Shallow copy - поверхностное копирование
 	String(const String& other)
 	{
@@ -69,6 +70,33 @@ public:
 		*/
 	}
 
+	//				Operators:
+	String& operator=(const String& other)
+	{
+		//this->str = other.str;	//Shallow copy - Повехностное копирование
+		/// ------------------------------------- ///
+		//0) Проверяем, не является ли тот объект этим объектом:
+		if (this == &other)return *this;
+		//1) Удаляем старую динамическую память
+		delete[] this->str;
+		//Deep copy - Побитовое копирование:
+		this->size = other.size;
+		//2) Выделяем новую динамическую память:
+		this->str = new char[size] {};
+		for (int i = 0; i < size; i++)this->str[i] = other.str[i];
+		cout << "CopyAssignment:\t\t" << this << endl;
+		return *this;
+	}
+	char operator[](int i)const
+	{
+		return str[i];	//Index operator, Subscript operator
+	}
+	char& operator[](int i)
+	{
+		return str[i];
+	}
+
+
 	//				Methods:
 	void print()const
 	{
@@ -80,9 +108,11 @@ String operator+(const String& left, const String& right)
 {
 	String result(left.get_size() + right.get_size() - 1);
 	for (int i = 0; i < left.get_size(); i++)
-		result.get_str()[i] = left.get_str()[i];
+		result[i] = left[i];
+		//result.get_str()[i] = left.get_str()[i];
 	for (int i = 0; i < right.get_size(); i++)
-		result.get_str()[i + left.get_size() - 1] = right.get_str()[i];
+		result[i + left.get_size() - 1] = right[i];
+		//result.get_str()[i + left.get_size() - 1] = right.get_str()[i];
 	return result;
 }
 std::ostream& operator<<(std::ostream& os, const String& obj)
@@ -95,11 +125,15 @@ void Clear(char* str)
 	delete[] str;
 }
 
-//#define CONSTRUCTORS_CHECK
+#define CONSTRUCTORS_CHECK
+//#define COPY_SEMANTIC_CHECK
 
 void main()
 {
 	setlocale(LC_ALL, "");
+
+	int a = 2;
+	a = 3;
 
 #ifdef CONSTRUCTORS_CHECK
 	String str1;
@@ -121,10 +155,13 @@ void main()
 	cout << str5 << endl;
 #endif // CONSTRUCTORS_CHECK
 
+#ifdef COPY_SEMANTIC_CHECK
 	String str1 = "Hello";
+	str1 = str1;
 	cout << str1 << endl;
 
-	String str2 = str1;
+	String str2;
+	str2 = str1;
 	cout << str2 << endl;
 
 
@@ -136,4 +173,6 @@ void main()
 	//delete[] str;
 	/*int arr[] = { 3,5,8,13,21 };
 	delete[] arr;*/
+#endif // COPY_SEMANTIC_CHECK
+
 }
