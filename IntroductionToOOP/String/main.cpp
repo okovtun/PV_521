@@ -150,7 +150,7 @@ void Clear(char* str)
 	delete[] str;
 }
 
-#define CONSTRUCTORS_CHECK
+//#define CONSTRUCTORS_CHECK
 //#define COPY_SEMANTIC_CHECK
 
 void main()
@@ -202,4 +202,43 @@ void main()
 #endif // COPY_SEMANTIC_CHECK
 
 	//MoveMethods (MoveSemantic)
+
+	String str1;	//DefaultConstructor
+	str1.print();
+
+	String str2(5);//Single-argument Constructor (int)
+	str2.print();
+
+	String str3 = "Hello";	//Single-argument Constructor (const char str[])
+	str3.print();
+
+	String str4();	//В этой строке НЕ вызывается DefaultConstructor, и НЕ создается объект,
+					//здесь объявляется функция 'str4', которая ничего не принимает,
+					//и возвращает значение типа 'String'.
+	//str4 НЕ является объектом.
+
+	//То есть, круглые скобки не делают явный вывоз конструктора по умолчанию,
+	//если есть необходимость явно вызвать конструктор по умолчанию,
+	//то это можно сделать при помощи фигурных скобок:
+
+	String str5{};	//А эта строка уже явно вызывает DefaultConstructor()
+	str5.print();
+
+	String str6{ 6 };	//Single-argument Constructor (int)
+	str6.print();
+
+	String str7{ "World" };
+	str7.print();
+
+	String str8 = str7;
+	str8.print();
+
+	String str9(str8);
+	str9.print();
+
+	String str10{ str9 };
+	str10.print();
+
+	//!!! Фигурные скобки для вызова конструкторов следует использовать с большой осторожностью	!!!
+
 }
