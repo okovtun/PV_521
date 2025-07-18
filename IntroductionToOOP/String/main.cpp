@@ -32,7 +32,7 @@ public:
 		//this->str = new char[size] {};
 		cout << "DefaultConstructor:\t" << this << endl;
 	}
-	String(const char* str) :size(strlen(str) + 1),str(new char[size] {})
+	String(const char* str) :String(strlen(str) + 1)
 	{
 		//this->size = strlen(str) + 1;	//strlen() возвращает размер строки в символах, +1 нужен чтобы выделилась память под NULL-Terminator
 		//this->str = new char[size] {};
@@ -42,19 +42,18 @@ public:
 	//CopyConstructor,CopyAssignment DeepCopy
 	//CopyMethods, CopySemantic
 	//Shallow copy - поверхностное копирование
-	String(const String& other) :size(other.size), str(new char[size] {})
+	String(const String& other) :String(other.str)
 	{
 		//this->str = other.str;	//Shallow copy
 		/// ------------------------------------------------ ///
 		//Deep copy:
 		//this->size = other.size;
 		//this->str = new char[size] {};
-		for (int i = 0; i < size; i++)
-			this->str[i] = other.str[i];
+		//for (int i = 0; i < size; i++)	this->str[i] = other.str[i];
 
 		cout << "CopyConstructor:\t" << this << endl;
 	}
-	String(String&& other):size(other.size),str(other.str)
+	String(String&& other) :size(other.size), str(other.str)
 	{
 		//MoveConstructor - ShallowCopy:
 		//this->size = other.size;
@@ -74,7 +73,7 @@ public:
 		-----------------------------------
 		Ошибка на этапе выполнения 'Debug Assertion Failed'
 		возникает когда оператор delete[] выполняется 2 раза
-		по одному адресу либо, оператору delete[] был передан 
+		по одному адресу либо, оператору delete[] был передан
 		адрес статической памяти.
 		-----------------------------------
 		*/
@@ -134,10 +133,10 @@ String operator+(const String& left, const String& right)
 	String result(left.get_size() + right.get_size() - 1);
 	for (int i = 0; i < left.get_size(); i++)
 		result[i] = left[i];
-		//result.get_str()[i] = left.get_str()[i];
+	//result.get_str()[i] = left.get_str()[i];
 	for (int i = 0; i < right.get_size(); i++)
 		result[i + left.get_size() - 1] = right[i];
-		//result.get_str()[i + left.get_size() - 1] = right.get_str()[i];
+	//result.get_str()[i + left.get_size() - 1] = right.get_str()[i];
 	return result;
 }
 std::ostream& operator<<(std::ostream& os, const String& obj)
@@ -230,7 +229,7 @@ void main()
 	String str7{ "World" };
 	str7.print();
 
-	String str8 = str7;
+	String str8 = str7;	//CopyConstructor
 	str8.print();
 
 	String str9(str8);
