@@ -2,6 +2,9 @@
 https://www.youtube.com/playlist?list=PLeqyOOqxeiINwoETYVNufASRa3i53K2Gb
 
 TODO:
+1. Теория;
+
+DONE:
 1. Выучить теорию;
 2. Написать CopyAssignment;
 3. В Solution 'IntroductionToOOP' добавить проект Matrix, и в нем реализовать класс Matrix,
