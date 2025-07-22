@@ -2,6 +2,17 @@
 https://www.youtube.com/playlist?list=PLeqyOOqxeiINwoETYVNufASRa3i53K2Gb
 
 TODO:
+1. В проект 'Academy' добавить класс 'Graduate' (Дипломник);
+2. Залить репу на GitHub, и прислать ссылку;
+
+DONE:
+1. В ветке 'StringSeparation' вынести в отдельные файлы классы
+   'Point' и 'Fraction';
+2. От ветки 'StringSeparation' создать ветку 'LIBs', и в ней,
+   собрать и проверить статические библиотеки для классов:
+	'Point', 'Fraction' и 'String';
+
+DONE:
 1. Теория;
 
 DONE:
