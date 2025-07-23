@@ -167,6 +167,42 @@ public:
 	}
 };
 
+#define GRADUATE_TAKE_PARAMETERS const std::string& subject
+#define GRADUATE_GIVE_PARAMETERS subject
+
+class Graduate :public Student
+{
+	std::string subject;
+public:
+	const std::string& get_subject()const
+	{
+		return subject;
+	}
+	void set_subject(const std::string& subject)
+	{
+		this->subject = subject;
+	}
+
+	//				Constructors:
+	Graduate(HUMAN_TAKE_PARAMETERS, STUDENT_TAKE_PARAMETERS, GRADUATE_TAKE_PARAMETERS)
+		:Student(HUMAN_GIVE_PARAMETERS, STUDENT_GIVE_PARAMETERS)
+	{
+		set_subject(subject);
+		cout << "GConstructor:\t" << this << endl;
+	}
+	~Graduate()
+	{
+		cout << "GDestructor:\t" << this << endl;
+	}
+
+	//				Methods:
+	void info()const
+	{
+		Student::info();
+		cout << get_subject() << endl;
+	}
+};
+
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -178,4 +214,7 @@ void main()
 
 	Teacher teacher("White", "Walter", 50, "Chemistry", 25);
 	teacher.info();
+
+	Graduate graduate("Schreder", "Hank", 40, "Criminalistic", "OBN", 40, 50, "How to catch Heisenberg");
+	graduate.info();
 }
