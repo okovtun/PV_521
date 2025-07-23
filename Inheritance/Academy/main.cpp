@@ -1,9 +1,11 @@
-//Academy
+﻿//Academy
 #include<iostream>
 #include<string>
 using std::cin;
 using std::cout;
 using std::endl;
+
+#define delimiter "\n--------------------------------------------\n"
 
 #define HUMAN_TAKE_PARAMETERS const std::string& last_name, const std::string& first_name, int age
 #define HUMAN_GIVE_PARAMETERS last_name, first_name, age
@@ -47,13 +49,13 @@ public:
 		set_age(age);
 		cout << "HConstructor:\t" << this << endl;
 	}
-	~Human()
+	virtual ~Human()
 	{
 		cout << "HDestructor:\t" << this << endl;
 	}
 
 	//					Methods:
-	void info()const
+	virtual void info()const	//Base class
 	{
 		cout << last_name << " " << first_name << " " << age << endl;
 	}
@@ -66,8 +68,8 @@ class Student :public Human
 {
 	std::string speciality;
 	std::string group;
-	double rating;			//������������
-	double attendance;		//������������
+	double rating;			//успеваемость
+	double attendance;		//посещаемость
 public:
 	const std::string& get_speciality()const
 	{
@@ -117,7 +119,7 @@ public:
 	}
 
 	//					Methods:
-	void info()const
+	void info()const override//Derived class
 	{
 		Human::info();
 		cout << speciality << " " << group << " " << rating << " " << attendance << endl;
@@ -160,7 +162,7 @@ public:
 	{
 		cout << "TDestructor:\t" << this << endl;
 	}
-	void info()const
+	void info()const override
 	{
 		Human::info();
 		cout << speciality << " " << experience << endl;
@@ -196,16 +198,21 @@ public:
 	}
 
 	//				Methods:
-	void info()const
+	void info()const override
 	{
 		Student::info();
 		cout << get_subject() << endl;
 	}
 };
 
+//#define INHERITANCE
+#define Polymorphism //(poly - много, morphis - форма)
+
 void main()
 {
 	setlocale(LC_ALL, "");
+	
+#ifdef INHERITANCE
 	Human human("Montana", "Antonio", 25);
 	human.info();
 
@@ -217,4 +224,43 @@ void main()
 
 	Graduate graduate("Schreder", "Hank", 40, "Criminalistic", "OBN", 40, 50, "How to catch Heisenberg");
 	graduate.info();
+#endif // INHERITANCE
+
+	/*
+	----------------------------
+//Compile-time Polymorphism
+//Ad-Hoc Polymorphism
+//Inclusion Polymorphism (Runtime Polymorphism);
+
+		1. Base-class pointers:
+			Generlaisation (Обобщение);
+			Upcast - преобразование дочернего объекта в базовый тип;
+		2. virtual functions. 
+		   Виртуальным называется метод, который может быть переопределен в дочернем классе.
+		   _vfptr (Virtual Functions Pointers) - таблица указателей на виртуальные функции.
+	----------------------------
+	*/
+
+	Human* group[] =
+	{
+		new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 98),
+		new Teacher("White", "Walter", 50, "Chemistry", 25),
+		new Graduate("Schreder", "Hank", 40, "Criminalistic", "OBN", 40, 50, "How to catch Heisenberg"),
+		new Student("Vercetty", "Tommy", 30, "Theft", "Vice", 98, 99),
+		new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
+	};
+
+	for (int i = 0; i < sizeof(group) / sizeof(group[0]); i++)
+	{
+		group[i]->info();
+		cout << delimiter << endl;
+	}
+
+	for (int i = 0; i < sizeof(group) / sizeof(group[0]); i++)
+	{
+		delete group[i];
+		cout << delimiter << endl;
+	}
+
+
 }
