@@ -1,0 +1,1589 @@
+
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents reference show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>ComboBox.FindString Method (System.Windows.Forms) | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Returns the index of the first item in the ComboBox that starts with the specified string. " />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.combobox.findstring?view=windowsdesktop-9.0" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="ComboBox.FindString Method (System.Windows.Forms)" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.combobox.findstring?view=windowsdesktop-9.0" />
+			<meta property="og:description" content="Returns the index of the first item in the ComboBox that starts with the specified string. " />
+			<meta name="platform_id" content="9d2b7a3a-b1c4-f6ff-ba9b-c9ee0ad314ce" /> <meta name="scope" content=".NET" />
+			<meta name="locale" content="en-us" />
+			 <meta name="adobe-target" content="true" />
+			<meta name="uhfHeaderId" content="MSDocsHeader-DotNet" />
+
+			<meta name="page_type" content="dotnet" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="uid" content="System.Windows.Forms.ComboBox.FindString*" />
+	
+		<meta name="namespace" content="System.Windows.Forms" />
+	
+		<meta name="monikers" content="netframework-1.1" />
+	
+		<meta name="monikers" content="netframework-2.0" />
+	
+		<meta name="monikers" content="netframework-3.0" />
+	
+		<meta name="monikers" content="windowsdesktop-3.0" />
+	
+		<meta name="monikers" content="netframework-3.5" />
+	
+		<meta name="monikers" content="netframework-4.0" />
+	
+		<meta name="monikers" content="windowsdesktop-3.1" />
+	
+		<meta name="monikers" content="netframework-4.5" />
+	
+		<meta name="monikers" content="netframework-4.5.1" />
+	
+		<meta name="monikers" content="netframework-4.5.2" />
+	
+		<meta name="monikers" content="netframework-4.6" />
+	
+		<meta name="monikers" content="netframework-4.6.1" />
+	
+		<meta name="monikers" content="netframework-4.6.2" />
+	
+		<meta name="monikers" content="netframework-4.7" />
+	
+		<meta name="monikers" content="netframework-4.7.1" />
+	
+		<meta name="monikers" content="netframework-4.7.2" />
+	
+		<meta name="monikers" content="netframework-4.8" />
+	
+		<meta name="monikers" content="netframework-4.8.1" />
+	
+		<meta name="monikers" content="windowsdesktop-5.0" />
+	
+		<meta name="monikers" content="windowsdesktop-6.0" />
+	
+		<meta name="monikers" content="windowsdesktop-7.0" />
+	
+		<meta name="monikers" content="windowsdesktop-8.0" />
+	
+		<meta name="monikers" content="windowsdesktop-9.0" />
+	
+		<meta name="monikers" content="windowsdesktop-10.0" />
+	
+		<meta name="schema" content="NetMember" />
+	
+		<meta name="breadcrumb_path" content="/dotnet/breadcrumb/toc.json" />
+	
+		<meta name="recommendations" content="true" />
+	
+		<meta name="author" content="dotnet-bot" />
+	
+		<meta name="ms.author" content="dotnetcontent" />
+	
+		<meta name="ms.date" content="2023-05-16T00:00:00Z" />
+	
+		<meta name="show_latex" content="true" />
+	
+		<meta name="apiPlatform" content="dotnet" />
+	
+		<meta name="ms.topic" content="reference" />
+	
+		<meta name="ms.service" content="dotnet-api" />
+	
+		<meta name="products" content="https://authoring-docs-microsoft.poolparty.biz/devrel/7696cda6-0510-47f6-8302-71bb5d2e28cf" />
+	
+		<meta name="feedback_system" content="OpenSource" />
+	
+		<meta name="feedback_product_url" content="https://aka.ms/feedback/report?space=61" />
+	
+		<meta name="feedback_help_link_url" content="https://learn.microsoft.com/answers/tags/97/dotnet" />
+	
+		<meta name="feedback_help_link_type" content="get-help-at-qna" />
+	
+		<meta name="ms.subservice" content="system.windows" />
+	
+		<meta name="APIName" content="System.Windows.Forms.ComboBox.FindString" />
+	
+		<meta name="APILocation" content="System.Windows.Forms.dll" />
+	
+		<meta name="TopicType" content="apiref" />
+	
+		<meta name="APIType" content="Assembly" />
+	
+		<meta name="document_id" content="6fc71ccc-e7dc-2681-7014-c1d620a1d425" />
+	
+		<meta name="document_version_independent_id" content="2cea51ae-68ca-baff-1a72-2d20d5a66fa0" />
+	
+		<meta name="updated_at" content="2025-07-16T16:36:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/dotnet/dotnet-api-docs/blob/live/xml/System.Windows.Forms/ComboBox.xml" />
+	
+		<meta name="gitcommit" content="https://github.com/dotnet/dotnet-api-docs/blob/99d55e1dba344c344f4a215796cb16becf2d69cd/xml/System.Windows.Forms/ComboBox.xml" />
+	
+		<meta name="git_commit_id" content="99d55e1dba344c344f4a215796cb16becf2d69cd" />
+	
+		<meta name="default_moniker" content="windowsdesktop-9.0" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="VS.dotnet-api-docs" />
+	
+		<meta name="page_kind" content="method" />
+	
+		<meta name="ms.assetid" content="System.Windows.Forms.ComboBox.FindString*" />
+	
+		<meta name="toc_rel" content="_splitted/system.windows.forms/toc.json" />
+	
+		<meta name="search.mshattr.devlang" content="csharp vb fsharp cpp" />
+	
+		<meta name="asset_id" content="api/system.windows.forms.combobox.findstring" />
+	
+		<meta name="moniker_range_name" content="4b7487e1483f9c43464d67c6e6586925" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="xml/System.Windows.Forms/ComboBox.xml" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/dotnet/dotnet-api-docs/blob/main/xml/System.Windows.Forms/ComboBox.xml" />
+	 
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/7696cda6-0510-47f6-8302-71bb5d2e28cf" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/69c76c32-967e-4c65-b89a-74cc527db725" data-source="generated" />
+	
+
+			<!-- assets and js globals -->
+			<link rel="stylesheet" href="/static/assets/0.4.03120.6991-1e48d463/styles/site-ltr.css" />
+			<link rel="preconnect" href="//mscom.demdex.net" crossorigin />
+						<link rel="dns-prefetch" href="//target.microsoft.com" />
+						<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net" />
+						<link
+							rel="preload"
+							as="script"
+							href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+							integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+							crossorigin="anonymous"
+							id="adobe-target-script"
+							type="application/javascript"
+						/>
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			<script src="/_themes/docs.theme/master/en-us/_themes/global/deprecation.js"></script>
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Reference",
+    "brand": "",
+    "context": {},
+    "standardFeedback": false,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "get-help-at-qna",
+    "feedbackHelpLinkUrl": "https://learn.microsoft.com/answers/tags/97/dotnet",
+    "feedbackSystem": "OpenSource",
+    "feedbackGitHubRepo": "dotnet/dotnet-api-docs",
+    "feedbackProductUrl": "https://aka.ms/feedback/report?space=61",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": true,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": false,
+    "contributors": [
+      {
+        "name": "gewarren",
+        "url": "https://github.com/gewarren"
+      },
+      {
+        "name": "kendaleiv",
+        "url": "https://github.com/kendaleiv"
+      },
+      {
+        "name": "mairaw",
+        "url": "https://github.com/mairaw"
+      },
+      {
+        "name": "BillWagner",
+        "url": "https://github.com/BillWagner"
+      },
+      {
+        "name": "RussKie",
+        "url": "https://github.com/RussKie"
+      },
+      {
+        "name": "live1206",
+        "url": "https://github.com/live1206"
+      },
+      {
+        "name": "JuditRose",
+        "url": "https://github.com/JuditRose"
+      },
+      {
+        "name": "jkotas",
+        "url": "https://github.com/jkotas"
+      },
+      {
+        "name": "Kissaki",
+        "url": "https://github.com/Kissaki"
+      },
+      {
+        "name": "yishengjin1413",
+        "url": "https://github.com/yishengjin1413"
+      },
+      {
+        "name": "dend",
+        "url": "https://github.com/dend"
+      },
+      {
+        "name": "ChrisMaddock",
+        "url": "https://github.com/ChrisMaddock"
+      },
+      {
+        "name": "openpublishbuild",
+        "url": "https://github.com/openpublishbuild"
+      },
+      {
+        "name": "svick",
+        "url": "https://github.com/svick"
+      },
+      {
+        "name": "TianqiZhang",
+        "url": "https://github.com/TianqiZhang"
+      }
+    ],
+    "mathjax": {},
+    "defaultDevLang": "csharp",
+    "openSourceFeedbackIssueUrl": "https://github.com/dotnet/dotnet-api-docs/issues/new?template=z-customer-feedback.yml",
+    "openSourceFeedbackIssueTitle": ""
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script src="/static/assets/0.4.03120.6991-1e48d463/scripts/en-us/index-docs.js"></script>
+			
+
+			<!-- json-ld -->
+			
+		</head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+		<a
+			href="#side-doc-outline"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to in-page navigation
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Skip to Ask Learn chat experience
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<header
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				role="banner"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+				></div>
+			</header>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu display-flex"
+					data-bi-name="menu"
+			  >
+					<div
+		id="left-container"
+		class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full"
+	>
+		<nav
+			id="affixed-left-container"
+			class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+			aria-label="Primary"
+		></nav>
+	</div>
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Table of contents </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+		</div>
+	</div>
+			<div data-main-column class="padding-sm padding-top-none padding-top-sm-tablet">
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Ask Learn"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs	 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle gradient-ask-learn-logo"></span>
+			</span>
+			<span>Ask Learn</span>
+		</button>
+	 
+		<div class="language dropdown display-flex align-items-center">
+			<button
+				type="button"
+				class="dropdown-trigger button button-clear button-sm button-primary"
+				aria-expanded="false"
+				title="Language"
+				data-bi-name="language"
+			>
+				<span class="lang-title align-self-flex-start" dir="ltr">Language</span>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-chevron-down-light expanded-indicator"></span>
+				</span>
+			</button>
+			<div class="language-selector dropdown-menu padding-xxs">
+				<ul data-bi-name="language-links" dir="ltr">
+					
+			<li>
+				<button
+					type="button"
+					class="button button-clear button-sm button-block"
+					data-bi-name="lang-csharp"
+					aria-pressed="false"
+				>
+					csharp
+				</button>
+			</li>
+		
+			<li>
+				<button
+					type="button"
+					class="button button-clear button-sm button-block"
+					data-bi-name="lang-vb"
+					aria-pressed="false"
+				>
+					vb
+				</button>
+			</li>
+		
+			<li>
+				<button
+					type="button"
+					class="button button-clear button-sm button-block"
+					data-bi-name="lang-fsharp"
+					aria-pressed="false"
+				>
+					fsharp
+				</button>
+			</li>
+		
+			<li>
+				<button
+					type="button"
+					class="button button-clear button-sm button-block"
+					data-bi-name="lang-cpp"
+					aria-pressed="false"
+				>
+					cpp
+				</button>
+			</li>
+		
+				</ul>
+			</div>
+		</div>
+	
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="button-block button-sm has-inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon">
+				<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+			</span>
+			<span class="contents-expand-title">Table of contents</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm has-inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	 
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	
+					
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to plan</span>
+		</button>
+	  
+		<a
+			data-contenteditbtn
+			class="button button-clear button-block button-sm inner-focus justify-content-flex-start text-align-left text-decoration-none"
+			data-bi-name="edit"
+			
+			href="https://github.com/dotnet/dotnet-api-docs/blob/main/xml/System.Windows.Forms/ComboBox.xml"
+			data-original_content_git_url="https://github.com/dotnet/dotnet-api-docs/blob/live/xml/System.Windows.Forms/ComboBox.xml"
+			data-original_content_git_url_template="{repo}/blob/{branch}/xml/System.Windows.Forms/ComboBox.xml"
+			data-pr_repo=""
+			data-pr_branch=""
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-edit-outline"></span>
+			</span>
+			<span>Edit</span>
+		</a>
+	
+					
+		<hr class="margin-block-xxs" />
+		<h4 class="font-size-sm padding-left-xxs">Share via</h4>
+		
+					<a
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-facebook"
+						data-bi-name="facebook"
+						data-page-action-item="overflow-all"
+						href="#"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-facebook-share"></span>
+						</span>
+						<span>Facebook</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-twitter"
+						data-bi-name="twitter"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-text" aria-hidden="true">
+							<span class="docon docon-xlogo-share"></span>
+						</span>
+						<span>x.com</span>
+					</a>
+
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-linkedin"
+						data-bi-name="linkedin"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-linked-in-logo"></span>
+						</span>
+						<span>LinkedIn</span>
+					</a>
+					<a
+						href="#"
+						class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-email"
+						data-bi-name="email"
+						data-page-action-item="overflow-all"
+					>
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-mail-message"></span>
+						</span>
+						<span>Email</span>
+					</a>
+			  
+	 
+		<hr class="margin-block-xxs" />
+		<button
+			class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			type="button"
+			data-bi-name="print"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			data-print-page
+			data-check-hidden="true"
+		>
+			<span class="icon color-primary" aria-hidden="true">
+				<span class="docon docon-print"></span>
+			</span>
+			<span>Print</span>
+		</button>
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	
+					<!-- azure disclaimer -->
+					
+					<!-- privateUnauthorizedTemplate is hidden by default -->
+					
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon">
+							<span class="docon docon-exclamation-circle-solid" aria-hidden="true"></span>
+						</span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Access to this page requires authorization. You can try <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">signing in</a> or <a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Access to this page requires authorization. You can try <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">changing directories</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"></div>
+					 
+					<div class="content">
+<div data-chunk-ids="0,1">
+<h1>Combo<wbr>Box.<wbr>Find<wbr>String Method</h1>
+
+
+<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm" data-bi-name="intopic toc" aria-label="">
+  <h2 class="title is-6 margin-block-xs"></h2>
+</nav>
+<h2 id="definition">Definition</h2>
+
+<div class="metadata">
+		<dl class="attributeList">
+			<dt>Namespace:</dt>
+			<dd>
+				<span class="break-text"> <a class="xref" href="system.windows.forms?view=windowsdesktop-9.0" data-linktype="relative-path">System.Windows.Forms</a> </span>
+			</dd>
+		</dl>
+
+
+		<dl class="attributeList" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 ">
+			<dt>Assembly:</dt><dd>System.Windows.Forms.dll</dd>
+		</dl>
+
+
+
+</div><div class="alert is-primary is-hidden moniker-display-boilerplate">
+    <p class="alert-title">
+      <span class="docon docon-status-info-outline" aria-hidden="true"></span> Important
+    </p>
+    <p>Some information relates to prerelease product that may be substantially modified before it’s released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</p>
+</div>
+	<div class="summaryHolder">
+		<div class="summary clearFix has-text-wrap">
+			<p>Returns the index of the first item in the <a class="no-loc" href="system.windows.forms.combobox?view=windowsdesktop-9.0" data-linktype="relative-path">ComboBox</a> that starts with the specified string.</p>
+
+		</div>
+	</div>
+
+
+    <h2>Overloads</h2>
+	<div data-no-chunk="">
+    <table class="table">
+		    <tbody><tr>
+        			<td>
+						<a class="xref" href="system.windows.forms.combobox.findstring?view=windowsdesktop-9.0#system-windows-forms-combobox-findstring(system-string)" data-linktype="relative-path">FindString(String)</a>
+					</td>
+					<td>
+						<p>Returns the index of the first item in the <a class="no-loc" href="system.windows.forms.combobox?view=windowsdesktop-9.0" data-linktype="relative-path">ComboBox</a> that starts with the specified string.</p>
+
+
+					</td>
+        	</tr>
+		    <tr>
+        			<td>
+						<a class="xref" href="system.windows.forms.combobox.findstring?view=windowsdesktop-9.0#system-windows-forms-combobox-findstring(system-string-system-int32)" data-linktype="relative-path">FindString(String, Int32)</a>
+					</td>
+					<td>
+						<p>Returns the index of the first item in the <a class="no-loc" href="system.windows.forms.combobox?view=windowsdesktop-9.0" data-linktype="relative-path">ComboBox</a> beyond the specified index that contains the specified string. The search is not case sensitive.</p>
+
+
+					</td>
+        	</tr>
+    </tbody></table>
+	</div>
+
+
+		<div data-chunk-ids="0">
+<div data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 ">
+
+<h2 id="system-windows-forms-combobox-findstring(system-string)" class="memberNameHolder">
+	FindString(String)
+</h2>
+
+<div class="memberInfo">
+	<dl class="attributeList" data-moniker=" windowsdesktop-7.0 ">
+		<dt>Source:</dt><dd><a href="https://github.com/dotnet/winforms/blob/e83409daa530605da4eb5f847c6740a520325d25/src/System.Windows.Forms/src/System/Windows/Forms/ComboBox.cs#L2061C44-L2061C73" data-linktype="external">ComboBox.cs</a></dd>
+	</dl>
+	<dl class="attributeList" data-moniker=" windowsdesktop-8.0 ">
+		<dt>Source:</dt><dd><a href="https://github.com/dotnet/winforms/blob/e4ede9b8979b9d2b1b1d4383f30a791414f0625b/src/System.Windows.Forms/src/System/Windows/Forms/ComboBox.cs#L2028C41-L2028C70" data-linktype="external">ComboBox.cs</a></dd>
+	</dl>
+	<dl class="attributeList" data-moniker=" windowsdesktop-9.0 ">
+		<dt>Source:</dt><dd><a href="https://github.com/dotnet/winforms/blob/62ebdb4b0d5cc7e163b8dc9331dc196e576bf162/src/System.Windows.Forms/src/System/Windows/Forms/Controls/ComboBox/ComboBox.cs#L1989C41-L1989C70" data-linktype="external">ComboBox.cs</a></dd>
+	</dl>
+
+	<div class="summaryHolder">
+		<div class="summary clearFix has-text-wrap">
+			<p>Returns the index of the first item in the <a class="no-loc" href="system.windows.forms.combobox?view=windowsdesktop-9.0" data-linktype="relative-path">ComboBox</a> that starts with the specified string.</p>
+
+		</div>
+	</div>
+	<pre class="wrap" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 "><code class="cpp lang-cpp" dir="ltr">public:
+ int FindString(System::String ^ s);</code></pre>
+	<pre class="wrap" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 "><code class="csharp lang-csharp" dir="ltr">public int FindString(string s);</code></pre>
+	<pre class="wrap" data-moniker=" windowsdesktop-10.0 windowsdesktop-8.0 windowsdesktop-9.0 "><code class="csharp lang-csharp" dir="ltr">public int FindString(string? s);</code></pre>
+	<pre class="wrap" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 "><code class="fsharp lang-fsharp" dir="ltr">member this.FindString : string -&gt; int</code></pre>
+	<pre class="wrap" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 "><code class="vb lang-vb" dir="ltr">Public Function FindString (s As String) As Integer</code></pre>
+	<h4 class="propertyInfoTitle stack">Parameters</h4>
+	<div class="propertyInfo">
+		<dl class="parameterList">
+			<dt>
+			
+			<span data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 ">s</span>
+			</dt>
+			<dd>
+				<a href="system.string?view=windowsdesktop-9.0" data-linktype="relative-path">String</a>
+				
+			</dd>
+		</dl>
+		<p>The <a class="no-loc" href="system.string?view=windowsdesktop-9.0" data-linktype="relative-path">String</a> to search for.</p>
+
+	</div>
+	<h4 class="propertyInfoTitle stack">Returns</h4>
+
+
+
+	<div class="propertyInfo">
+		<a href="system.int32?view=windowsdesktop-9.0" data-linktype="relative-path">Int32</a>
+		
+	</div>
+
+	<p>The zero-based index of the first item found; returns -1 if no match is found.</p>
+
+
+
+
+  <h3>Examples</h3>
+    	<p>The following code example shows the usage of the <a href="system.windows.forms.combobox.findstring?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">FindString</a> method and <a href="system.windows.forms.combobox.selectedindex?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">SelectedIndex</a> property. The example is part of a complete code example in the <a href="system.windows.forms.combobox?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">ComboBox</a> class overview.</p>
+<pre><code class="lang-cpp">void findButton_Click( Object^ sender, System::EventArgs^ e )
+{
+   int index = comboBox1-&gt;FindString( textBox2-&gt;Text );
+   comboBox1-&gt;SelectedIndex = index;
+}
+</code></pre>
+<pre><code class="lang-csharp">private void findButton_Click(object sender, System.EventArgs e) {
+    int index = comboBox1.FindString(textBox2.Text);
+    comboBox1.SelectedIndex = index;
+}
+</code></pre>
+<pre><code class="lang-vb">Private Sub findButton_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+    Dim index As Integer
+    index = comboBox1.FindString(textBox2.Text)
+    comboBox1.SelectedIndex = index
+End Sub
+</code></pre>
+
+
+    	<h3>Remarks</h3>
+    	<p>The search performed by this method is not case-sensitive. The <code>s</code> parameter is a substring to compare against the text associated with the items in the combo box list. The search performs a partial match starting from the beginning of the text, and returning the first item in the list that matches the specified substring. You can then perform tasks, such as removing the item that contains the search text using the <a href="system.windows.forms.combobox.objectcollection.remove?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">Remove</a> method or changing the item's text. Once you have found the specified text, if you want to search for other instances of the text in the <a href="system.windows.forms.combobox?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">ComboBox</a>, you must use the version of the <a href="system.windows.forms.combobox.findstring?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">FindString</a> method that provides a parameter for specifying a starting index within the <a href="system.windows.forms.combobox?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">ComboBox</a>. If you want to perform a search for an exact word match instead of a partial match, use the <a href="system.windows.forms.combobox.findstringexact?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">FindStringExact</a> method.</p>
+
+
+
+
+
+  <div data-no-chunk="">
+  <h3>Applies to</h3>
+  <details>
+    <summary class="margin-bottom-xs">
+    </summary>
+    <div class="table-wrapper moniker-applies-to-overloadmember">
+      <table class="table table-complex has-row-header-background">
+        <thead>
+        </thead>
+      </table>
+    </div>
+  </details>
+</div>
+</div>
+
+</div>		</div>
+		<div data-chunk-ids="1">
+<div data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 ">
+
+<h2 id="system-windows-forms-combobox-findstring(system-string-system-int32)" class="memberNameHolder">
+	FindString(String, Int32)
+</h2>
+
+<div class="memberInfo">
+	<dl class="attributeList" data-moniker=" windowsdesktop-7.0 ">
+		<dt>Source:</dt><dd><a href="https://github.com/dotnet/winforms/blob/e83409daa530605da4eb5f847c6740a520325d25/src/System.Windows.Forms/src/System/Windows/Forms/ComboBox.cs#L2069C13-L2069C104" data-linktype="external">ComboBox.cs</a></dd>
+	</dl>
+	<dl class="attributeList" data-moniker=" windowsdesktop-8.0 ">
+		<dt>Source:</dt><dd><a href="https://github.com/dotnet/winforms/blob/e4ede9b8979b9d2b1b1d4383f30a791414f0625b/src/System.Windows.Forms/src/System/Windows/Forms/ComboBox.cs#L2036C9-L2036C100" data-linktype="external">ComboBox.cs</a></dd>
+	</dl>
+	<dl class="attributeList" data-moniker=" windowsdesktop-9.0 ">
+		<dt>Source:</dt><dd><a href="https://github.com/dotnet/winforms/blob/62ebdb4b0d5cc7e163b8dc9331dc196e576bf162/src/System.Windows.Forms/src/System/Windows/Forms/Controls/ComboBox/ComboBox.cs#L1997C9-L1997C100" data-linktype="external">ComboBox.cs</a></dd>
+	</dl>
+
+	<div class="summaryHolder">
+		<div class="summary clearFix has-text-wrap">
+			<p>Returns the index of the first item in the <a class="no-loc" href="system.windows.forms.combobox?view=windowsdesktop-9.0" data-linktype="relative-path">ComboBox</a> beyond the specified index that contains the specified string. The search is not case sensitive.</p>
+
+		</div>
+	</div>
+	<pre class="wrap" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 "><code class="cpp lang-cpp" dir="ltr">public:
+ int FindString(System::String ^ s, int startIndex);</code></pre>
+	<pre class="wrap" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 "><code class="csharp lang-csharp" dir="ltr">public int FindString(string s, int startIndex);</code></pre>
+	<pre class="wrap" data-moniker=" windowsdesktop-10.0 windowsdesktop-8.0 windowsdesktop-9.0 "><code class="csharp lang-csharp" dir="ltr">public int FindString(string? s, int startIndex);</code></pre>
+	<pre class="wrap" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 "><code class="fsharp lang-fsharp" dir="ltr">member this.FindString : string * int -&gt; int</code></pre>
+	<pre class="wrap" data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 "><code class="vb lang-vb" dir="ltr">Public Function FindString (s As String, startIndex As Integer) As Integer</code></pre>
+	<h4 class="propertyInfoTitle stack">Parameters</h4>
+	<div class="propertyInfo">
+		<dl class="parameterList">
+			<dt>
+			
+			<span data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 ">s</span>
+			</dt>
+			<dd>
+				<a href="system.string?view=windowsdesktop-9.0" data-linktype="relative-path">String</a>
+				
+			</dd>
+		</dl>
+		<p>The <a class="no-loc" href="system.string?view=windowsdesktop-9.0" data-linktype="relative-path">String</a> to search for.</p>
+
+	</div>
+	<div class="propertyInfo stack">
+		<dl class="parameterList">
+			<dt>
+			
+			<span data-moniker=" netframework-1.1 netframework-2.0 netframework-3.0 netframework-3.5 netframework-4.0 netframework-4.5 netframework-4.5.1 netframework-4.5.2 netframework-4.6 netframework-4.6.1 netframework-4.6.2 netframework-4.7 netframework-4.7.1 netframework-4.7.2 netframework-4.8 netframework-4.8.1 windowsdesktop-10.0 windowsdesktop-3.0 windowsdesktop-3.1 windowsdesktop-5.0 windowsdesktop-6.0 windowsdesktop-7.0 windowsdesktop-8.0 windowsdesktop-9.0 ">startIndex</span>
+			</dt>
+			<dd>
+				<a href="system.int32?view=windowsdesktop-9.0" data-linktype="relative-path">Int32</a>
+				
+			</dd>
+		</dl>
+		<p>The zero-based index of the item before the first item to be searched. Set to -1 to search from the beginning of the control.</p>
+
+	</div>
+	<h4 class="propertyInfoTitle stack">Returns</h4>
+
+
+
+	<div class="propertyInfo">
+		<a href="system.int32?view=windowsdesktop-9.0" data-linktype="relative-path">Int32</a>
+		
+	</div>
+
+	<p>The zero-based index of the first item found; returns -1 if no match is found, or 0 if the <code data-dev-comment-type="paramref">s</code> parameter specifies <a class="no-loc" href="system.string.empty?view=windowsdesktop-9.0#system-string-empty" data-linktype="relative-path">Empty</a>.</p>
+
+
+
+	<h4 class="propertyInfoTitle stack">Exceptions</h4>
+		<div class="propertyInfo">
+		    <div class="subtle">
+			    <a href="system.argumentoutofrangeexception?view=windowsdesktop-9.0" data-linktype="relative-path">ArgumentOutOfRangeException</a>
+		    </div>
+		    <p>The <code data-dev-comment-type="paramref">startIndex</code> is less than -1.</p>
+<p>-or-</p>
+<p>The <code data-dev-comment-type="paramref">startIndex</code> is greater than the last index in the collection.</p>
+
+		</div>
+
+
+    	<h3>Remarks</h3>
+    	<p>The search performed by this method is not case-sensitive. The <code>s</code> parameter is a substring to compare against the text associated with the items in the combo box list. The search performs a partial match starting from the beginning of the text, returning the first item in the list that matches the specified substring. You can then perform tasks, such as removing the item that contains the search text using the <a href="system.windows.forms.combobox.objectcollection.remove?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">Remove</a> method or changing the item's text. This method is typically used after a call has been made using the version of this method that does not specify a starting index. Once an initial item has been found in the list, this method is typically used to find further instances of the search text by specifying the index position in the <code>startIndex</code> parameter of the item after the first found instance of the search text. If you want to perform a search for an exact word match instead of a partial match, use the <a href="system.windows.forms.combobox.findstringexact?view=windowsdesktop-9.0" class="no-loc" data-linktype="relative-path">FindStringExact</a> method.</p>
+
+
+
+
+
+  <div data-no-chunk="">
+  <h3>Applies to</h3>
+  <details>
+    <summary class="margin-bottom-xs">
+    </summary>
+    <div class="table-wrapper moniker-applies-to-overloadmember">
+      <table class="table table-complex has-row-header-background">
+        <thead>
+        </thead>
+      </table>
+    </div>
+  </details>
+</div>
+</div>
+
+</div>		</div>
+
+
+
+</div>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+			
+		<!-- feedback section -->
+		<section
+			class="feedback-section position-relative margin-top-lg border border-radius padding-xxs display-none-print"
+			data-bi-name="open-source-feedback-section"
+			data-open-source-feedback-section
+			hidden
+		>
+			<div class="display-flex flex-direction-column flex-direction-row-tablet">
+				<div
+					class="width-450-tablet padding-inline-xs padding-inline-xs-tablet padding-top-xs padding-bottom-sm padding-top-xs-tablet background-color-body-medium"
+				>
+					<div class="display-flex flex-direction-column">
+						<div class="padding-bottom-xxs">
+							<span class="icon margin-right-xxs" aria-hidden="true">
+								<span class="docon docon-brand-github"></span>
+							</span>
+							<span class="font-weight-semibold">
+								Collaborate with us on GitHub
+							</span>
+						</div>
+						<span class="line-height-normal">
+							The source for this content can be found on GitHub, where you can also create and review issues and pull requests. For more information, see <a href="https://learn.microsoft.com/contribute/content/dotnet/api-documentation">our contributor guide</a>.
+						</span>
+					</div>
+				</div>
+				<div
+					class="display-flex gap-xs width-full-tablet flex-direction-column padding-xs justify-content-space-evenly"
+				>
+					<div class="media">
+						
+					<div class="media-left">
+						<div class="image image-36x36" hidden data-open-source-image-container>
+							<img
+								class="theme-display is-light"
+								src="https://learn.microsoft.com/media/logos/logo_net.svg"
+								aria-hidden="true"
+								data-open-source-image-light
+							/>
+							<img
+								class="theme-display is-dark is-high-contrast"
+								src="https://learn.microsoft.com/media/logos/logo_net.svg"
+								aria-hidden="true"
+								data-open-source-image-dark
+							/>
+						</div>
+					</div>
+			  
+
+						<div class="media-content">
+							<p
+								class="font-size-xl font-weight-semibold margin-bottom-xxs"
+								data-open-source-product-title
+							>
+								.NET
+							</p>
+							<div class="display-flex gap-xs flex-direction-column">
+								<p class="line-height-normal" data-open-source-product-description></p>
+								<div class="display-flex gap-xs flex-direction-column">
+									<a href="#" data-github-link>
+										<span class="icon margin-right-xxs" aria-hidden="true">
+											<span class="docon docon-bug"></span>
+										</span>
+										<span>Open a documentation issue</span>
+									</a>
+									<a
+										href="https://aka.ms/feedback/report?space=61"
+										class="display-block margin-top-auto font-size-md"
+										data-feedback-product-url
+									>
+										<span class="icon margin-right-xxs" aria-hidden="true">
+											<span class="docon docon-feedback"></span>
+										</span>
+										<span>Provide product feedback</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+			
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					Was this page helpful?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="This article is helpful"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="This article is not helpful"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+		
+				</div>
+				
+			</div>
+			
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="Action Panel"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside "
+					data-bi-name="aside"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+			role="complementary"
+			aria-label="Additional resources"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs"
+			data-bi-name="intopic toc"
+			aria-label="In this article"
+		>
+			<h3>In this article</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<p class="font-weight-semibold margin-bottom-xs">Was this page helpful?</p>
+			<div class="buttons">
+				<button
+					class="thumb-rating-button like button button-primary button-sm"
+					data-test-id="right-rail-rating-yes"
+					data-binary-rating-response="rating-yes"
+					type="button"
+					title="This article is helpful"
+					data-bi-name="button-rating-yes"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-like"></span>
+					</span>
+					<span>Yes</span>
+				</button>
+				<button
+					class="thumb-rating-button dislike button button-primary button-sm"
+					data-test-id="right-rail-rating-no"
+					data-binary-rating-response="rating-no"
+					type="button"
+					title="This article is not helpful"
+					data-bi-name="button-rating-no"
+					aria-pressed="false"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-dislike"></span>
+					</span>
+					<span>No</span>
+				</button>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout has-padding has-default-focus border-top  uhf-container"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	
+				<div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-expanded="false"
+				title="Theme"
+				data-bi-name="theme"
+			>
+				<span class="icon">
+					<span class="docon docon-sun" aria-hidden="true"></span>
+				</span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu">
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="light"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="dark"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							data-theme-to="high-contrast"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2025</li>
+			</ul>
+		</footer>
+	</footer>
+			</body>
+		</html>
