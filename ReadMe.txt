@@ -1,7 +1,16 @@
 ﻿https://github.com/okovtun/PV_521.git
 https://www.youtube.com/playlist?list=PLeqyOOqxeiINwoETYVNufASRa3i53K2Gb
 
+https://stamina-online.com/ru/lessons/ru
+https://www.typingstudy.com/ru-lao-1/numeric_keypad
+
+CSV
+
 TODO:
+Прочитать группу из файла, в результате чего должен появиться такой же массив объектов, 
+как мы создавали в main().
+
+DONE:
 1. В проект 'Academy' добавить класс 'Graduate' (Дипломник);
 2. Залить репу на GitHub, и прислать ссылку;
 

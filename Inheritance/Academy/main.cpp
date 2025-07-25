@@ -56,15 +56,15 @@ public:
 	}
 
 	//					Methods:
-	virtual void info()const	//Base class
+	virtual std::ostream& info(std::ostream& os)const	//Base class
 	{
-		cout << last_name << " " << first_name << " " << age << endl;
+		return os << last_name << " " << first_name << " " << age;
 	}
 };
 
 std::ostream& operator<<(std::ostream& os, const Human& obj)
 {
-	return os << obj.get_last_name() << " " << obj.get_first_name() << " " << obj.get_age();
+	return obj.info(os);
 }
 
 #define STUDENT_TAKE_PARAMETERS const std::string& speciality, const std::string& group, double rating, double attendance
@@ -111,7 +111,7 @@ public:
 	}
 
 	//					Constructors:
-	Student(HUMAN_TAKE_PARAMETERS,STUDENT_TAKE_PARAMETERS):Human(HUMAN_GIVE_PARAMETERS)
+	Student(HUMAN_TAKE_PARAMETERS, STUDENT_TAKE_PARAMETERS) :Human(HUMAN_GIVE_PARAMETERS)
 	{
 		set_speciality(speciality);
 		set_group(group);
@@ -125,10 +125,9 @@ public:
 	}
 
 	//					Methods:
-	void info()const override//Derived class
+	std::ostream& info(std::ostream& os)const override//Derived class
 	{
-		Human::info();
-		cout << speciality << " " << group << " " << rating << " " << attendance << endl;
+		return Human::info(os) << " " << speciality << " " << group << " " << rating << " " << attendance;
 	}
 };
 
@@ -158,7 +157,7 @@ public:
 	}
 
 	//				Constructors:
-	Teacher(HUMAN_TAKE_PARAMETERS,TEACHER_TAKE_PARAMETERS):Human(HUMAN_GIVE_PARAMETERS)
+	Teacher(HUMAN_TAKE_PARAMETERS, TEACHER_TAKE_PARAMETERS) :Human(HUMAN_GIVE_PARAMETERS)
 	{
 		set_speciality(speciality);
 		set_experience(experience);
@@ -168,10 +167,9 @@ public:
 	{
 		cout << "TDestructor:\t" << this << endl;
 	}
-	void info()const override
+	std::ostream& info(std::ostream& os)const override
 	{
-		Human::info();
-		cout << speciality << " " << experience << endl;
+		return Human::info(os) << " " << speciality << " " << experience;
 	}
 };
 
@@ -204,20 +202,19 @@ public:
 	}
 
 	//				Methods:
-	void info()const override
+	std::ostream& info(std::ostream& os)const override
 	{
-		Student::info();
-		cout << get_subject() << endl;
+		return Student::info(os)<< " " << get_subject();
 	}
 };
 
 //#define INHERITANCE
-#define Polymorphism //(poly - много, morphis - форма)
+#define POLYMORPHISM //(poly - много, morphis - форма)
 
 void main()
 {
 	setlocale(LC_ALL, "");
-	
+
 #ifdef INHERITANCE
 	Human human("Montana", "Antonio", 25);
 	human.info();
@@ -232,8 +229,9 @@ void main()
 	graduate.info();
 #endif // INHERITANCE
 
+#ifdef POLYMORPHISM
 	/*
-	----------------------------
+----------------------------
 //Compile-time Polymorphism
 //Ad-Hoc Polymorphism
 //Inclusion Polymorphism (Runtime Polymorphism);
@@ -241,7 +239,7 @@ void main()
 		1. Base-class pointers:
 			Generlaisation (Обобщение);
 			Upcast - преобразование дочернего объекта в базовый тип;
-		2. virtual functions. 
+		2. virtual functions.
 		   Виртуальным называется метод, который может быть переопределен в дочернем классе.
 		   _vfptr (Virtual Functions Pointers) - таблица указателей на виртуальные функции.
 	----------------------------
@@ -259,7 +257,7 @@ void main()
 	std::ofstream fout("group.txt");
 	for (int i = 0; i < sizeof(group) / sizeof(group[0]); i++)
 	{
-		group[i]->info();
+		group[i]->info(cout);
 		fout << *group[i] << endl;
 		cout << delimiter << endl;
 	}
@@ -271,6 +269,8 @@ void main()
 		delete group[i];
 		cout << delimiter << endl;
 	}
+#endif // POLYMORPHISM
+
 
 
 }

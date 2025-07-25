@@ -1,5 +1,5 @@
-Pinkman Jessie 22
-White Walter 50
-Schreder Hank 40
-Vercetty Tommy 30
-Diaz Ricardo 50
+Pinkman Jessie 22 Chemistry WW_220 95 98
+White Walter 50 Chemistry 25
+Schreder Hank 40 Criminalistic OBN 40 50 How to catch Heisenberg
+Vercetty Tommy 30 Theft Vice 98 99
+Diaz Ricardo 50 Weapons distribution 20
