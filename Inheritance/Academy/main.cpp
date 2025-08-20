@@ -86,6 +86,10 @@ public:
 		os << age;
 		return os;
 	}
+	virtual std::istream& scan(std::istream& is)
+	{
+		return is >> last_name >> first_name >> age;
+	}
 };
 
 int Human::count = 0;	//Инициализация статической переменной (относится к определению класса - Class definition)
@@ -93,6 +97,10 @@ int Human::count = 0;	//Инициализация статической пер
 std::ostream& operator<<(std::ostream& os, const Human& obj)
 {
 	return obj.info(os);
+}
+std::istream& operator>>(std::istream& is, Human& obj)
+{
+	return obj.scan(is);
 }
 
 #define STUDENT_TAKE_PARAMETERS const std::string& speciality, const std::string& group, double rating, double attendance
@@ -170,6 +178,24 @@ public:
 		os << attendance;
 		return os;
 	}
+	std::istream& scan(std::istream& is)override
+	{
+		Human::scan(is);
+		char sz_buffer[SPECIALITY_WIDTH + 1] = {};
+		is.read(sz_buffer, SPECIALITY_WIDTH);	//fin.read() читает заданное количество сиволов из файла, и сохраняет их в NTL (NULL-Terminated Line);
+
+		//Удаляем лишние пробелы в конце прочитанной строки:
+		for (int i = SPECIALITY_WIDTH; sz_buffer[i] == ' '; i--)sz_buffer[i] = 0;
+
+		//Удаляем лишние пробелы в начале прочитанной строки:
+		while (sz_buffer[0] == ' ')
+			for (int i = 0; sz_buffer[i]; i++)sz_buffer[i] = sz_buffer[i + 1];
+
+		speciality = sz_buffer;	//Сохраняем специальность в соответствующее поле
+
+		is >> group >> rating >> attendance;
+		return is;
+	}
 };
 
 #define TEACHER_TAKE_PARAMETERS const std::string& speciality, int experience
@@ -220,6 +246,24 @@ public:
 		os << experience;
 		return os;
 	}
+	std::istream& scan(std::istream& is)override
+	{
+		Human::scan(is);
+		char sz_buffer[SPECIALITY_WIDTH + 1] = {};
+		is.read(sz_buffer, SPECIALITY_WIDTH);	//fin.read() читает заданное количество сиволов из файла, и сохраняет их в NTL (NULL-Terminated Line);
+
+		//Удаляем лишние пробелы в конце прочитанной строки:
+		for (int i = SPECIALITY_WIDTH; sz_buffer[i] == ' '; i--)sz_buffer[i] = 0;
+
+		//Удаляем лишние пробелы в начале прочитанной строки:
+		while (sz_buffer[0] == ' ')
+			for (int i = 0; sz_buffer[i]; i++)sz_buffer[i] = sz_buffer[i + 1];
+
+		speciality = sz_buffer;	//Сохраняем специальность в соответствующее поле
+
+		is >> experience;
+		return is;
+	}
 };
 
 #define GRADUATE_TAKE_PARAMETERS const std::string& subject
@@ -254,6 +298,11 @@ public:
 	std::ostream& info(std::ostream& os)const override
 	{
 		return Student::info(os) << " " << get_subject();
+	}
+	std::istream& scan(std::istream& is) override
+	{
+		std::getline(is, subject);
+		return is;
 	}
 };
 
@@ -319,7 +368,7 @@ Human** Load(const std::string& filename, int& n)
 		{
 			std::string buffer;
 			std::getline(fin, buffer, ':');
-
+			group[i] = HumanFactory(buffer);
 		}
 	}
 	else
