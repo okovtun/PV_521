@@ -279,6 +279,15 @@ void Save(Human* group[], const int n, const std::string& filename)
 	cmd += filename;
 	system(cmd.c_str());	//Метод c_str() возвращает строку в виде массива символов (char* );
 }
+Human* HumanFactory(const std::string& type)
+{
+	Human* human = nullptr;
+	if (type == "Human")human = new Human("", "", 0);
+	else if (type == "Student")human = new Student("", "", 0, "", "", 0, 0);
+	else if (type == "Graduate")human = new Graduate("", "", 0, "", "", 0, 0, "");
+	else if (type == "Teacher")human = new Teacher("", "", 0, "", 0);
+	return human;
+}
 Human** Load(const std::string& filename, int& n)
 {
 	Human** group = nullptr;
@@ -305,7 +314,13 @@ Human** Load(const std::string& filename, int& n)
 		fin.seekg(0);	//Метод seekg(n), переводит Get-курсор (на чтение) в указанную позицию 'n';
 		cout << "Position " << fin.tellg() << endl;	//Метод tellg() возвращает текущую Get-позицию курсора на чтение. -1 значит eof();
 
+		//4) Загружаем объекты из файла:
+		for (int i=0; !fin.eof(); i++)
+		{
+			std::string buffer;
+			std::getline(fin, buffer, ':');
 
+		}
 	}
 	else
 	{
