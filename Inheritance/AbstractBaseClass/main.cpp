@@ -15,7 +15,7 @@ public:
 	//Класс становится абстрактным, если в нем объявить хотябы один чисто-виртуальный метод.
 };
 
-class GroundVehicle :public Vehicle{};//Абстрактный класс
+class LandVehicle :public Vehicle{};//Абстрактный класс
 	//Абстрактный пацан
 class AirVehicle :public Vehicle
 {
@@ -25,7 +25,7 @@ public:
 	virtual void landing() = 0;
 };
 
-class Car:public GroundVehicle
+class Car:public LandVehicle
 {
 	//Конкретный класс:
 	//Конкретный пацан:
@@ -35,7 +35,7 @@ public:
 		cout << "Машина едет по земле на колесах" << endl;
 	}
 };
-class Bicycle :public GroundVehicle
+class Bicycle :public LandVehicle
 {
 public:
 	void move()override
@@ -79,6 +79,8 @@ public:
 
 void main()
 {
+	cout << sizeof(long long) << endl;
+	cout << ULLONG_MAX << endl;
 	setlocale(LC_ALL, "");
 	//Vehicle vehicle;	//E0322, C2259: Невозможно создать экземпляр абстрактного класса.
 	//GroundVehicle gv;
