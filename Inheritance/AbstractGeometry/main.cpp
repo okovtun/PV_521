@@ -32,7 +32,7 @@ namespace Geometry
 		static const int MIN_LINE_WIDTH = 1;
 		static const int MAX_LINE_WIDTH = 16;
 		static const int MIN_SIZE = 32;
-		static const int MAX_SIZE = 768;
+		static const int MAX_SIZE = 512;
 
 		Shape(SHAPE_TAKE_PARAMETERS) :color(color)
 		{
@@ -60,6 +60,13 @@ namespace Geometry
 				line_width < MIN_LINE_WIDTH ? MIN_LINE_WIDTH :
 				line_width > MAX_LINE_WIDTH ? MAX_LINE_WIDTH :
 				line_width;
+		}
+		int filter_size(int size)const
+		{
+			return
+				size < MIN_SIZE ? MIN_SIZE :
+				size > MAX_SIZE ? MAX_SIZE :
+				size;
 		}
 		int get_start_x()const
 		{
@@ -141,11 +148,11 @@ namespace Geometry
 		}
 		void set_width(double width)
 		{
-			this->width = width;
+			this->width = filter_size(width);
 		}
 		void set_height(double height)
 		{
-			this->height = height;
+			this->height = filter_size(height);
 		}
 		double get_width()const
 		{
@@ -217,7 +224,7 @@ void main()
 	cout << "\n-------------------------\n" << endl;*/
 	square.info();
 
-	Geometry::Rectangle rect(150, 100, 550, 100, 2, Geometry::Color::Orange);
+	Geometry::Rectangle rect(150, 100, 150, 100, 2, Geometry::Color::Orange);
 	rect.info();
 
 	while (true)
