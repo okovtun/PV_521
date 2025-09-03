@@ -9,6 +9,13 @@ https://www.typingstudy.com/ru-lao-1/numeric_keypad
 /////////////////////////////////////////////////////////////////////////////////
 
 TODO:
+1. Решить проблему с выходом за пределы списка в методе insert();
+2. Написать метод erase();
+3. Деструктор списка должен полностью очищать список;
+4. ForwardList fusion = list1 + list2;
+   fusion.print();
+
+DONE:
 В класс 'ForwardList' добавить следующие методы:
 1. push_back();
 2. pop_front();
