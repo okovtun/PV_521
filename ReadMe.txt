@@ -8,7 +8,28 @@ https://www.typingstudy.com/ru-lao-1/numeric_keypad
 /////////////////				DATA CONTAINERS						/////////////
 /////////////////////////////////////////////////////////////////////////////////
 
+Time:
+	https://legacy.cplusplus.com/reference/ctime/
+	https://legacy.cplusplus.com/reference/ctime/clock/
+	https://legacy.cplusplus.com/reference/ctime/CLOCKS_PER_SEC/
+
 TODO:
+1. Создать список заданное число элементов следующим образом:
+	ForwardList list(5);
+
+2. Перегрузить оператор []:
+	for(int i=0; i<list.get_size(); i++)
+		list[i] = rand()%100;
+	for(int i=0; i<list.get_size(); i++)
+		cout << list[i] << tab;
+	cout << endl;
+
+3. Провести тест производительности оператора [];
+4. Реализовать MoveSemantic (The Rule Of five) в классе 'ForwardList';
+5. Протестировать производительность Copy-методов;
+6. Оптимизировать производительность Copy-методов;
+
+DONE:
 1. Решить проблему с выходом за пределы списка в методе insert();
 2. Написать метод erase();
 3. Деструктор списка должен полностью очищать список;
