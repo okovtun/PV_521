@@ -4,6 +4,8 @@ https://www.youtube.com/playlist?list=PLeqyOOqxeiINwoETYVNufASRa3i53K2Gb
 https://stamina-online.com/ru/lessons/ru
 https://www.typingstudy.com/ru-lao-1/numeric_keypad
 
+https://stackoverflow.com/questions/76674926/vs-2022-error-encountered-while-pushing-to-the-remote-repository-git-failed-w
+
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////				DATA CONTAINERS						/////////////
 /////////////////////////////////////////////////////////////////////////////////
@@ -14,20 +16,20 @@ Time:
 	https://legacy.cplusplus.com/reference/ctime/CLOCKS_PER_SEC/
 
 TODO:
-1. Создать список заданное число элементов следующим образом:
+1. Создать список заданное число элементов следующим образом:	DONE
 	ForwardList list(5);
 
-2. Перегрузить оператор []:
+2. Перегрузить оператор []:						DONE
 	for(int i=0; i<list.get_size(); i++)
 		list[i] = rand()%100;
 	for(int i=0; i<list.get_size(); i++)
 		cout << list[i] << tab;
 	cout << endl;
 
-3. Провести тест производительности оператора [];
+3. Провести тест производительности оператора [];DONE
 4. Реализовать MoveSemantic (The Rule Of five) в классе 'ForwardList';
-5. Протестировать производительность Copy-методов;
-6. Оптимизировать производительность Copy-методов;
+5. Протестировать производительность Copy-методов;			DONE
+6. Оптимизировать производительность Copy-методов;			DONE
 
 DONE:
 1. Решить проблему с выходом за пределы списка в методе insert();

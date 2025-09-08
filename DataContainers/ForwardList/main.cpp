@@ -56,11 +56,20 @@ public:
 		size = 0;
 		cout << "FLConstructor:\t" << this << endl;
 	}
+	ForwardList(int size):ForwardList()
+	{
+		while (size--)push_front(0);
+		cout << "FLSizeConstructor:\t" << this << endl;
+	}
 	ForwardList(const ForwardList& other):ForwardList()
 	{
 		//Deep copy (Побитовое копирование):
 		*this = other;
 		cout << "FLCopyConstructor:\t" << this << endl;
+	}
+	ForwardList(ForwardList&& other) :ForwardList()
+	{
+		*this = std::move(other);
 	}
 	~ForwardList()
 	{
@@ -77,10 +86,37 @@ public:
 		while (Head)pop_front();			//1) Старое значение объекта удаляется из памяти
 		//2) Deep copy (Побитовое копирование):
 		for (Element* Temp = other.Head; Temp; Temp = Temp->pNext)
-			push_back(Temp->Data);
+			push_front(Temp->Data);
+			//push_back(Temp->Data);
+		reverse();
 		cout << "FLCopyAssignment:\t" << this << endl;
 		return *this;
 	}
+	ForwardList& operator=(ForwardList&& other)
+	{
+		if (this == &other)return *this;
+		while (Head)pop_front();
+		this->Head = other.Head;
+		this->size = other.size;
+		other.Head = nullptr;
+		other.size = 0;
+		cout << "FLMoveAssingment:\t" << this << endl;
+		return *this;
+	}
+
+	int operator[](int index)const
+	{
+		Element* Temp = Head;
+		for (int i = 0; i < index; i++)Temp = Temp->pNext;
+		return Temp->Data;
+	}
+	int& operator[](int index)
+	{
+		Element* Temp = Head;
+		for (int i = 0; i < index; i++)Temp = Temp->pNext;
+		return Temp->Data;
+	}
+
 
 	//			Adding elements:
 	void push_front(int Data)
@@ -146,6 +182,23 @@ public:
 	}
 
 	//					Methods:
+	void reverse()
+	{
+		ForwardList reverse;
+		while (Head)	//Пока список содержит элементы
+		{
+			reverse.push_front(Head->Data);	//добавляем Головной элемент в еверсный список
+			pop_front();	//и удаляем начальный элемент списка
+		}
+		//Подменяем наш список реверсным:
+		/*Head = reverse.Head;	
+		size = reverse.size;	*/
+		*this = std::move(reverse);	//Это встроенная функция, которая явным образом вызывает MoveAssignment,
+		//если он есть, в противном случае behavior is undefined.
+		reverse.Head = nullptr;	//Поскольку реверсный список является локальной переменной,
+		//для него будет вызван детруктор, который полностью его очистит, а он указыват на ту же память,
+		//на которую указывает наш основной список, следовательно деструктор удалит и наш основной список.
+	}
 	void print()const
 	{
 		/*
@@ -171,16 +224,19 @@ ForwardList operator+(const ForwardList& left, const ForwardList& right)
 {
 	ForwardList fusion;
 	for (Element* Temp = left.get_Head(); Temp; Temp = Temp->pNext)
-		fusion.push_back(Temp->Data);
+		fusion.push_front(Temp->Data);
 	for (Element* Temp = right.Head; Temp; Temp = Temp->pNext)
-		fusion.push_back(Temp->Data);
-
+		fusion.push_front(Temp->Data);
+	fusion.reverse();
 	return fusion;
 }
 
 //#define BASE_CHECK
-#define OPERATOR_PLUS_CHECK
+//#define OPERATOR_PLUS_CHECK
 //#define PERFORMANCE_CHECK
+//#define SUBSCRIPT_OPERATOR_CHECK
+//#define COPY_SEMANTIC_PERFORMANCE_CHECK
+#define MOVE_SEMANTIC_CHECK
 
 void main()
 {
@@ -213,7 +269,8 @@ void main()
 	list1.push_back(1);
 	list1.push_back(1);
 	list1.push_back(2);
-	list1.print();
+	//list1.print();
+	for (int i = 0; i < list1.get_size(); i++)cout << list1[i] << tab; cout << endl;
 
 	ForwardList list2;
 	list2.push_back(3);
@@ -224,18 +281,20 @@ void main()
 	list2.push_back(34);
 	list2.push_back(55);
 	list2.push_back(89);
-	list2.print();
+	//list2.print();
+	for (int i = 0; i < list2.get_size(); i++)cout << list2[i] << tab; cout << endl;
 
 	int a = 2;
 	int b = 3;
 	int c = a + b;
 
 	//ForwardList fusion = list1 + list2;		//CopyConstructor
-	ForwardList fusion;
+	ForwardList list3;
 	cout << delimiter << endl;
-	fusion = list1 + list2;		//CopyAssignment
+	list3 = list1 + list2;		//CopyAssignment
 	cout << delimiter << endl;
-	fusion.print();
+	//list3.print();
+	for (int i = 0; i < list3.get_size(); i++)cout << list3[i] << tab; cout << endl;
 
 	/*
 	int index;
@@ -263,5 +322,68 @@ void main()
 	system("PAUSE");
 #endif // PERFORMANCE_CHECK
 
+#ifdef SUBSCRIPT_OPERATOR_CHECK
+	int n;
+	cout << "Введите размер списка: "; cin >> n;
+
+	clock_t start;
+	clock_t end;
+
+	ForwardList list(n);
+	start = clock();
+	for (int i = 0; i < list.get_size(); i++)
+		list[i] = rand() % 100;
+	end = clock();
+	cout << "Список заполнен за " << double(end - start) / CLOCKS_PER_SEC << " секунд" << endl;
+	system("PAUSE");
+	for (int i = 0; i < list.get_size(); i++)
+		cout << list[i] << tab;
+	cout << endl;
+#endif // SUBSCRIPT_OPERATOR_CHECK
+
+#ifdef COPY_SEMANTIC_PERFORMANCE_CHECK
+	int n;
+	cout << "Введите размер списка: "; cin >> n;
+
+	clock_t t_start, t_end;
+
+	ForwardList list1;
+	t_start = clock();
+	for (int i = 0; i < n; i++)
+		list1.push_front(rand() % 100);
+	t_end = clock();
+	cout << "Список заполнен за " << double(t_end - t_start) / CLOCKS_PER_SEC << " секунд" << endl;
+	system("PAUSE");
+	t_start = clock();
+	ForwardList list2 = list1;
+	t_end = clock();
+	cout << "Копирование завершено за " << double(t_end - t_start) / CLOCKS_PER_SEC << " секунд" << endl;
+
+	//for (int i = 0; i < list1.get_size(); i++)cout << list1[i] << tab; cout << endl;
+	//for (int i = 0; i < list2.get_size(); i++)cout << list2[i] << tab; cout << endl;  
+#endif // COPY_SEMANTIC_PERFORMANCE_CHECK
+
+#ifdef MOVE_SEMANTIC_CHECK
+	clock_t t_start, t_end;
+	ForwardList list1;
+	ForwardList list2;
+	t_start = clock();
+	for (int i = 0; i < 3000000; i++)list1.push_front(rand());
+	for (int i = 0; i < 3000000; i++)list2.push_front(rand());
+	t_end = clock();
+	cout << "Lists filled for " << double(t_end - t_start) / CLOCKS_PER_SEC << " seconds" << endl;
+	system("PAUSE");
+
+	t_start = clock();
+	ForwardList list3 = list1 + list2;
+	t_end = clock();
+	cout << "Lists concatenated for " << double(t_end - t_start) / CLOCKS_PER_SEC << " seconds" << endl;
+
+	t_start = clock();
+	ForwardList list4 = list3;
+	t_end = clock();
+	cout << "Lists copied for " << double(t_end - t_start) / CLOCKS_PER_SEC << " seconds" << endl;
+
+#endif // MOVE_SEMANTIC_CHECK
 
 }
