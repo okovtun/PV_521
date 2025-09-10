@@ -16,6 +16,10 @@ Time:
 	https://legacy.cplusplus.com/reference/ctime/CLOCKS_PER_SEC/
 
 TODO:
+1. В Solution 'DataContainers' добавить проект 'ListHW', и в нем реализовать класс 'List',
+   описывающий двусвязный список;
+
+DONE:
 1. Создать список заданное число элементов следующим образом:	DONE
 	ForwardList list(5);
 

@@ -55,6 +55,12 @@ public:
 		Temp = Temp->pNext;
 		return *this;
 	}
+	Iterator operator++(int)
+	{
+		Iterator old = *this;
+		Temp = Temp->pNext;
+		return old;
+	}
 	bool operator==(const Iterator& other)const
 	{
 		return this->Temp == other.Temp;
@@ -481,4 +487,10 @@ void main()
 	ForwardList list = { 3, 5, 8, 13, 21 };	//Перечисление значений в фигурных скобках через запятую неявно создает объект класса 'initializer_list';
 	list.print();
 	for (int i : list)cout << i << tab; cout << endl;
+	cout << delimiter << endl;
+	for (Iterator it = list.begin(); it != list.end(); ++it)
+	{
+		cout << *it << tab;
+	}
+	cout << endl;
 }
