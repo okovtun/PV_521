@@ -18,7 +18,7 @@ Time:
 TODO:
 1. Написать метод erase();
 2. Проверочный код в секции 'HOME_WORK' должен заработать:
-	
+	https://github.com/okovtun/PV_521/blob/51687c2f16ee30e24ec167d0f402f868e2bba72e/DataContainers/List/main.cpp#L223-L230
 
 DONE:
 1. В Solution 'DataContainers' добавить проект 'ListHW', и в нем реализовать класс 'List',
