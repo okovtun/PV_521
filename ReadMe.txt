@@ -16,6 +16,11 @@ Time:
 	https://legacy.cplusplus.com/reference/ctime/CLOCKS_PER_SEC/
 
 TODO:
+1. Написать метод erase();
+2. Проверочный код в секции 'HOME_WORK' должен заработать:
+	
+
+DONE:
 1. В Solution 'DataContainers' добавить проект 'ListHW', и в нем реализовать класс 'List',
    описывающий двусвязный список;
 
