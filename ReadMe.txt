@@ -16,6 +16,11 @@ Time:
 	https://legacy.cplusplus.com/reference/ctime/CLOCKS_PER_SEC/
 
 TODO:
+1. От ветки 'SeparatedList' создать ветку 'SeparatedListHW', и в ней попробовать вынести 
+   методы вложенных классов (ConstBaseIterator, ConstIterator, Iterator....) за пределы класса;
+2. Шаблонизировать ForwardList;
+
+DONE:
 1. Написать метод erase();
 2. Проверочный код в секции 'HOME_WORK' должен заработать:
 	https://github.com/okovtun/PV_521/blob/51687c2f16ee30e24ec167d0f402f868e2bba72e/DataContainers/List/main.cpp#L223-L230
