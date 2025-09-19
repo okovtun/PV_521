@@ -16,6 +16,12 @@ Time:
 	https://legacy.cplusplus.com/reference/ctime/CLOCKS_PER_SEC/
 
 TODO:
+В проекте 'Recursion' написать следующие рекурсивные функции:
+	??? Factorial(???);	//возвращает факториал числа
+	??? Power(???);		//возводит число в степень
+	??? Fibonacci(???);	//Выводит на экран ряд Фибоначчи до указанного предела
+
+DONE:
 1. Написать метод erase();
 2. Проверочный код в секции 'HOME_WORK' должен заработать:
 	https://github.com/okovtun/PV_521/blob/51687c2f16ee30e24ec167d0f402f868e2bba72e/DataContainers/List/main.cpp#L223-L230
