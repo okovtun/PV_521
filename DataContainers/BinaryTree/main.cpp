@@ -1,10 +1,14 @@
 #include<iostream>
 #include<time.h>
+#include<algorithm>
+#include<math.h>
 using std::cin;
 using std::cout;
 using std::endl;
 
 #define tab "\t"
+
+//#define MAX(a,b)a>b?a:b
 
 //#define DEBUG
 
@@ -176,11 +180,19 @@ private:
 
 	int depth(Element* Root)const
 	{
-		return
+		return Root == nullptr ? 0 : std::max(depth(Root->pLeft) + 1, depth(Root->pRight) + 1);
+
+		/*if (Root == nullptr)return 0;
+		int l_depth = depth(Root->pLeft)+1;
+		int r_depth = depth(Root->pRight)+1;
+		return l_depth < r_depth ? r_depth : l_depth;*/
+
+		/*return
 			Root == nullptr ? 0 :
 			depth(Root->pLeft) + 1 > depth(Root->pRight) + 1 ?
 			depth(Root->pLeft) + 1 :
-			depth(Root->pRight) + 1;
+			depth(Root->pRight) + 1;*/
+
 	}
 	void print(Element* Root)const
 	{
@@ -225,6 +237,7 @@ template<typename T>void measure_performance(const char message[], T(Tree::*func
 
 //#define BASE_CHECK
 //#define ERASE_CHECK
+#define PERFORMANCE_CHECK
 
 void main()
 {
@@ -282,6 +295,7 @@ void main()
 	cout << "Грубина дерева: " << tree.depth() << endl;
 #endif // ERASE_CHECK
 
+#ifdef PERFORMANCE_CHECK
 	int n;
 	cout << "Введите количество элементов: "; cin >> n;
 	Tree tree;
@@ -302,5 +316,8 @@ void main()
 	measure_performance("Сумма элемнтов дерева: ", &Tree::sum, tree);
 	measure_performance("Количество элемнтов дерева: ", &Tree::count, tree);
 	measure_performance("Среднее-арифметическо элемнтов дерева: ", &Tree::avg, tree);
+	measure_performance("Глубина дерева: ", &Tree::depth, tree);
+#endif // PERFORMANCE_CHECK
+
 
 }
