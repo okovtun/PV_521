@@ -177,6 +177,7 @@ public:
 	}
 	int& operator[](int index)
 	{
+		if (index >= size)throw std::out_of_range("ForwardList: Out of range exception");
 		Element* Temp = Head;
 		for (int i = 0; i < index; i++)Temp = Temp->pNext;
 		return Temp->Data;
@@ -310,7 +311,7 @@ void Print(int arr[])
 //#define BASE_CHECK
 //#define OPERATOR_PLUS_CHECK
 //#define PERFORMANCE_CHECK
-//#define SUBSCRIPT_OPERATOR_CHECK
+#define SUBSCRIPT_OPERATOR_CHECK
 //#define COPY_SEMANTIC_PERFORMANCE_CHECK
 //#define MOVE_SEMANTIC_CHECK
 //#define RANGE_BASED_FOR_ARRAY
@@ -412,10 +413,17 @@ void main()
 		list[i] = rand() % 100;
 	end = clock();
 	cout << "Список заполнен за " << double(end - start) / CLOCKS_PER_SEC << " секунд" << endl;
-	system("PAUSE");
-	for (int i = 0; i < list.get_size(); i++)
-		cout << list[i] << tab;
-	cout << endl;
+	//system("PAUSE");
+	try
+	{
+		for (int i = 0; i < list.get_size() * 2000; i++)
+			cout << list[i] << tab;
+		cout << endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << endl;
+	}
 #endif // SUBSCRIPT_OPERATOR_CHECK
 
 #ifdef COPY_SEMANTIC_PERFORMANCE_CHECK
@@ -484,13 +492,13 @@ void main()
 	Print(arr);
 #endif // RANGE_BASED_FOR_ARRAY
 
-	ForwardList list = { 3, 5, 8, 13, 21 };	//Перечисление значений в фигурных скобках через запятую неявно создает объект класса 'initializer_list';
-	list.print();
-	for (int i : list)cout << i << tab; cout << endl;
-	cout << delimiter << endl;
-	for (Iterator it = list.begin(); it != list.end(); ++it)
-	{
-		cout << *it << tab;
-	}
-	cout << endl;
+	//ForwardList list = { 3, 5, 8, 13, 21 };	//Перечисление значений в фигурных скобках через запятую неявно создает объект класса 'initializer_list';
+	//list.print();
+	//for (int i : list)cout << i << tab; cout << endl;
+	//cout << delimiter << endl;
+	//for (Iterator it = list.begin(); it != list.end(); ++it)
+	//{
+	//	cout << *it << tab;
+	//}
+	//cout << endl;
 }
