@@ -14,9 +14,9 @@ https://stackoverflow.com/questions/76674926/vs-2022-error-encountered-while-pus
 https://legacy.cplusplus.com/reference/stl/
 
 TODO:
-1. Вызвать для Вектора метод erase();
-2. Создать std::list, и добавить в него значение по индексу;
-3. Удалить значение по индексу из list-a;
+1. Вызвать для Вектора метод erase();						DONE
+2. Создать std::list, и добавить в него значение по индексу;DONE
+3. Удалить значение по индексу из list-a;					DONE
 4. Создать std::forward_list, и добавить в него значение по индексу;
 5. Удалить значение по индексу из forward_list-a;
 
