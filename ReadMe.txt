@@ -14,6 +14,11 @@ https://stackoverflow.com/questions/76674926/vs-2022-error-encountered-while-pus
 https://legacy.cplusplus.com/reference/stl/
 
 TODO:
+1. Прочитать Базу из файла;
+2. Добавить время правонарушения:
+	https://legacy.cplusplus.com/reference/ctime/
+
+TODO:
 1. Вывести словарь на экран;
 2. В Solution 'STL' добавить проект 'Police', и в этом проекте:
 	Реализовать базу данных ГАИ по штрафным квитанциям с помощью бинарного дерева.
