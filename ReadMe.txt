@@ -17,6 +17,7 @@ TODO:
 1. Прочитать Базу из файла;
 2. Добавить время правонарушения:
 	https://legacy.cplusplus.com/reference/ctime/
+	https://stackoverflow.com/questions/7350070/force-encoding-when-writing-txt-file-with-ofstream
 
 TODO:
 1. Вывести словарь на экран;
