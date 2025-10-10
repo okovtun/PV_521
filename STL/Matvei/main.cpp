@@ -1,22 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<fstream>
-#include<string>
-#include<sstream>
-#include<map>
-#include<list>
-#include<time.h>
+#include <map>
+#include <string>
+#include <sstream>
+#include <list>
+#include <time.h>
 using std::cin;
 using std::cout;
 using std::endl;
 
-#define delimiter "\n--------------------------------------------\n"
+#define delimiter "\n-------------------------------------------------------\n"
 
 const std::map<int, std::string> VIOLATIONS =
 {
 	{0, "N/A"},
 	{1, "ѕарковка в неположенном месте"},
-	{2, "Ќепристегутый ремень безопасности"},
-	{3, "ѕересечение спошной"},
+	{2, "Ќепристегнутый ремень безопасности"},
+	{3, "ѕересечение сплошной"},
 	{4, "ѕревышение скорости"},
 	{5, "ѕроезд на красный"},
 	{6, "¬ыезд на встречную полосу"},
@@ -24,7 +25,7 @@ const std::map<int, std::string> VIOLATIONS =
 	{8, "ќскорбление офицера"},
 };
 class Crime;
-std::stringstream& operator>>(std::stringstream& stream, Crime& obj);
+std::stringstream& operator >> (std::stringstream& stream, Crime& obj);
 class Crime
 {
 	int violation;
@@ -66,9 +67,9 @@ public:
 		//YYYY.MM.DD HH:MM
 		int parts[5] = {};
 		int n = 0;
-		const char delimiters[] = "./- :";
+		const char delimiters[] = "./-: ";
 		for (char* pch = strtok(timestring, delimiters); pch; pch = strtok(NULL, delimiters))
-			//atoi() - ASCII ti INT, преобразует входную строку в целое число
+			//функци€ atoi() - ASCII ti INT, преобразует входную строку в целое число
 			parts[n++] = std::atoi(pch);
 		this->time = {};
 		this->time.tm_year = parts[0] - 1900;
@@ -87,24 +88,27 @@ public:
 		set_place(place);
 		set_time(time);
 	}
-	explicit Crime(const std::string& str)
+	explicit Crime(std::string str)
 	{
 		std::stringstream stream(str);
 		stream >> *this;
 	}
 };
+
 std::ostream& operator<<(std::ostream& os, const Crime& obj)
 {
 	os.width(44);
 	os << std::left;
-	return os << obj.get_time() << VIOLATIONS.at(obj.get_violation()) << obj.get_place();
+	return os << obj.get_time() << VIOLATIONS.at(obj.get_violation()) << obj.get_place() << " " << obj.get_timestamp();
 }
-std::ofstream& operator<<(std::ofstream& ofs, const Crime& obj)
+
+std::ofstream& operator << (std::ofstream& ofs, const Crime& obj)
 {
 	ofs << obj.get_violation() << " " << obj.get_timestamp() << " " << obj.get_place();
 	return ofs;
 }
-std::stringstream& operator>>(std::stringstream& stream, Crime& obj)
+
+std::stringstream& operator >> (std::stringstream& stream, Crime& obj)
 {
 	int violation;
 	stream >> violation;
@@ -129,49 +133,34 @@ std::map<std::string, std::list<Crime>> load(const std::string& filename);
 void main()
 {
 	setlocale(LC_ALL, "");
-
 #ifdef INIT_BASE
 	std::map<std::string, std::list<Crime>> base =
 	{
-		{"a123bb", {Crime(2, "ул. ѕролетарска€"), Crime(3, "ул. ¬атутина")}	},
-		{"a777aa", {Crime(4, "ул. Ћенина"), Crime(5, "ул. Ћенина"), Crime(7, "ул. Ёнтузиастов"), Crime(8, "ул. Ёнтузиастов")} },
-		{"a001eg", {Crime(5, "ул. ќкт€брьска€"), Crime(5, "ул. ќкт€брьска€"), Crime(7, "ул.  осмическа€"), Crime(8, "ул. Ёнтузиастов")} }
-	};
-	print(base);
-	//save(base, "base.txt");
-#endif // INIT_BASE
-
-#ifdef INIT_BASE_2
-	std::map<std::string, std::list<Crime>> base =
-	{
-		{"a123bb", {Crime(2, "ул. ѕролетарска€", "2025.01.05 11:12"), Crime(3, "ул. ¬атутина", "2025/01/06 15:25")}	},
-		{"a777aa", {Crime(4, "ул. Ћенина", "2024.04.04 16:04"), Crime(5, "ул. Ћенина", "2024.04.04 16:14"), Crime(7, "ул. Ёнтузиастов", "2024.04.04 16:24"), Crime(8, "ул. Ёнтузиастов", "2024.04.04 16:34")} },
-		{"a001eg", {Crime(5, "ул. ќкт€брьска€", "2024.07.08 19:08"), Crime(5, "ул. ќкт€брьска€", "2024.07.08 19:28"), Crime(7, "ул.  осмическа€", "2024.07.08 19:38"), Crime(8, "ул. Ёнтузиастов", "2024.07.08 19:48")} }
+		{"a777aa", {Crime(4, "ул.Ћенина"), Crime(5,"ул.Ћенина"), Crime(7,"ул. Ёнтузиастов"), Crime(8,"ул.Ёнтузиастов")}},
+		{"a123бб", {Crime(2, "ул.ѕролетарска€"), Crime(3,"ул.¬атутина")}},
+		{"a001ев", {Crime(5, "ул.ќктр€брьска€"), Crime(5,"ул.ќкт€брьска€"), Crime(7,"ул. Ёнтузиастов"), Crime(8,"ул.Ёнтузиастов")}},
 	};
 	print(base);
 	save(base, "base.txt");
 #endif // INIT_BASE
 
-
+#ifdef INIT_BASE_2
+	std::map<std::string, std::list<Crime>> base =
+	{
+		{"a777aa", {Crime(4, " ул.Ћенина", "2024.04.04 16:04"), Crime(5," ул.Ћенина", "2024.04.04 16:14"), Crime(7," ул. Ёнтузиастов", "2024.04.04 16:24"), Crime(8," ул.Ёнтузиастов", "2024.04.04 16:34")}},
+		{"a123бб", {Crime(2, " ул.ѕролетарска€", "2025.01.05 11:12"), Crime(3," ул.¬атутина", "2025.01.06 15:25")}},
+		{"a001ев", {Crime(5, " ул.ќктр€брьска€", "2024.07.08 19:08"), Crime(5," ул.ќкт€брьска€", "2024.07.08 19:28"), Crime(7," ул. Ёнтузиастов", "2024.07.08 19:38"), Crime(8," ул.Ёнтузиастов", "2024.07.08 19:48")}},
+	};
+	print(base);
+	save(base, "base.txt");
+#endif // INIT_BASE
 
 #ifdef LOAD_CHECK
 	std::map<std::string, std::list<Crime>> base = load("base.txt");
 	print(base);
+
 #endif // LOAD_CHECK
 
-}
-
-void print(const std::map<std::string, std::list<Crime>>& base)
-{
-	for (std::map<std::string, std::list<Crime>>::const_iterator plate = base.begin(); plate != base.end(); ++plate)
-	{
-		cout << plate->first << ":\n";
-		for (std::list<Crime>::const_iterator violation = plate->second.begin(); violation != plate->second.end(); ++violation)
-		{
-			cout << "\t" << *violation << endl;
-		}
-		cout << delimiter << endl;
-	}
 }
 void save(const std::map<std::string, std::list<Crime>>& base, const std::string& filename)
 {
@@ -190,6 +179,19 @@ void save(const std::map<std::string, std::list<Crime>>& base, const std::string
 	cmd += filename;
 	system(cmd.c_str());
 }
+void print(const std::map<std::string, std::list<Crime>>& base)
+{
+	for (std::map<std::string, std::list<Crime>>::const_iterator plate = base.begin(); plate != base.end(); ++plate)
+	{
+		cout << plate->first << ":\n";
+		for (std::list<Crime>::const_iterator violation = plate->second.begin(); violation != plate->second.end(); ++violation)
+		{
+			cout << "\t" << *violation << endl;
+		}
+		cout << delimiter;
+	}
+}
+
 std::map<std::string, std::list<Crime>> load(const std::string& filename)
 {
 	std::map<std::string, std::list<Crime>> base;
@@ -198,23 +200,26 @@ std::map<std::string, std::list<Crime>> load(const std::string& filename)
 	{
 		while (!fin.eof())
 		{
-			std::string licence_plate;
-			std::getline(fin, licence_plate, ':');
-			cout << licence_plate << "\t";
+			std::string license_plate;
+			std::getline(fin, license_plate, ':');
+			cout << license_plate << "\t";
 			const int SIZE = 1024 * 500;
 			char all_crimes[SIZE];
 			fin.getline(all_crimes, SIZE);
 			cout << all_crimes << endl;
 			const char delimiters[] = ",";
-			//https://legacy.cplusplus.com/reference/cstring/strtok/
 			for (char* pch = strtok(all_crimes, delimiters); pch; pch = strtok(NULL, delimiters))
-				//https://legacy.cplusplus.com/reference/map/map/operator[]/
-				base[licence_plate].push_back(Crime(pch));
+				base[license_plate].push_back(Crime(pch));
 			{
-				/*Crime crime(0,"");
+				/*
+				Crime crime(0, "");
 				std::stringstream stream(pch);
 				stream >> crime;
-				base[licence_plate].push_back(crime);*/
+				base[license_plate].push_back(crime);
+				*/
+				/*
+				Stringstream - это объект, который хранит строку, но позвол€ет работать с ней, как с потоком. ј именно из строки можно читать различные еЄ элементы, использу€ операторы перенаправлени€ в поток и потоковую функцию get_line.
+				*/
 			}
 		}
 	}

@@ -14,6 +14,14 @@ https://stackoverflow.com/questions/76674926/vs-2022-error-encountered-while-pus
 https://legacy.cplusplus.com/reference/stl/
 
 TODO:
+1. Почитать про Timestamp;
+
+
+TODO:
+1. Записать время в файл;
+2. Прочитать время из файла;
+
+DONE:
 1. Прочитать Базу из файла;
 2. Добавить время правонарушения:
 	https://legacy.cplusplus.com/reference/ctime/
