@@ -145,6 +145,7 @@ void menu(std::map<std::string, std::list<Crime>>& base);
 void main()
 {
 	setlocale(LC_ALL, "");
+	cout << (std::string("d41d8cd98f00b204e9800998ecf8427e") == std::string("d41d8cd98f00b204e9800998ecf8427e")) << endl;
 #ifdef INIT_BASE
 	std::map<std::string, std::list<Crime>> base =
 	{

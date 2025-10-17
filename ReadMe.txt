@@ -14,6 +14,12 @@ https://stackoverflow.com/questions/76674926/vs-2022-error-encountered-while-pus
 https://legacy.cplusplus.com/reference/stl/
 
 TODO:
+1. Установить Visual Paradigm Community Edition:
+	https://www.visual-paradigm.com/download/community.jsp;
+2. Нарисовать UML-диаграму компьютера;
+3. Определить разницу между Builder и Prototype;
+
+TODO:
 1. Почитать про Timestamp;
 
 TODO:

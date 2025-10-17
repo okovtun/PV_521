@@ -424,6 +424,8 @@ void main()
 	{
 		std::cerr << e.what() << endl;
 	}
+	ForwardList list2 = list;
+	for (int i : list2)cout << i << tab; cout << endl;
 #endif // SUBSCRIPT_OPERATOR_CHECK
 
 #ifdef COPY_SEMANTIC_PERFORMANCE_CHECK
